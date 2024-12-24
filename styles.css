@@ -1,0 +1,15 @@
+/* Header Image Styling */
+.header-image {
+    width: 120px; /* Set default size for the image */
+    height: auto;
+    border: 2px solid white;
+    margin-top: 20px; /* Add spacing below the title */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .header-image {
+      width: 80px; /* Smaller size for mobile */
+    }
+  }
+  
