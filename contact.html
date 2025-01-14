@@ -77,7 +77,8 @@
   <main class="container my-5">
     <h2>Get in Touch</h2>
     <p>We look forward to assisting you with your legal needs. Please use the form below to contact us.</p>
-    <form name="contact" method="POST" data-netlify="true" class="row g-3">
+    <form name="contact" method="POST" class="row g-3">
+      <!-- Hidden input to allow Netlify to identify the form -->
       <input type="hidden" name="form-name" value="contact">
       <div class="col-md-6">
         <input type="text" class="form-control" name="name" placeholder="Your Name" required>
