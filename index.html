@@ -8,10 +8,30 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --aquamarine: #0D98BA;
+    }
+    .navbar, .footer {
+      background-color: var(--aquamarine) !important;
+    }
+    .header {
+      background-color: var(--aquamarine);
+      color: #fff;
+    }
+    .btn-primary {
+      background-color: var(--aquamarine);
+      border-color: var(--aquamarine);
+    }
+    .btn-primary:hover {
+      background-color: #0b849d;
+      border-color: #0b849d;
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="#">Strul Law</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,11 +42,20 @@
           <li class="nav-item">
             <a class="nav-link active" href="index.html">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+              <li><a class="dropdown-item" href="services-academic.html">Academic & Corporate Governance</a></li>
+              <li><a class="dropdown-item" href="services-admin.html">Administrative Law</a></li>
+              <li><a class="dropdown-item" href="services-employment.html">Employment & Labour Law</a></li>
+              <li><a class="dropdown-item" href="services-general.html">General Contract and Counsel Services</a></li>
+            </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog/Insights</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
@@ -37,7 +66,7 @@
   </nav>
 
   <!-- Header Section -->
-  <header class="bg-dark text-white text-center py-5 position-relative">
+  <header class="header text-center py-5 position-relative">
     <div class="container">
       <h1 class="display-4">Strul Law</h1>
       <p class="lead">Professional Legal Services by Cory Strul</p>
@@ -52,7 +81,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
+  <footer class="footer text-white text-center py-3">
     <p>&copy; 2024 Strul Law. All rights reserved.</p>
   </footer>
 
