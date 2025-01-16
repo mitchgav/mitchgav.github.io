@@ -18,6 +18,35 @@
       background-color: var(--aquamarine);
       color: #fff;
     }
+    .about-section {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .about-image-container {
+      text-align: center; /* Center-align the image and text */
+      margin: 0 auto; /* Ensure the container stays centered */
+    }
+    .about-image {
+        max-width: 300px; /* Set a maximum width for the image */
+        height: auto;
+        border-radius: 10px;
+    }
+    .about-name {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: center; /* Ensure text stays centered */
+    }
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-image-container {
+        margin-bottom: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -61,21 +90,28 @@
     <div class="container">
       <h1 class="display-4">About Cory Strul</h1>
       <p class="lead">Labour and Employment Lawyer | Public Law Lawyer | Governance Expert</p>
-      <img src="placeholder.jpg" alt="Cory Strul" class="header-image rounded-circle">
     </div>
   </header>
 
   <!-- About Content -->
   <main class="container my-5">
-    <p>
-      Cory Strul is a Labour and Employment Lawyer, Public Law Lawyer and Governance Expert who obtained his Juris Doctor from Osgoode Hall Law School in the Province of Ontario where he was the recipient of many awards including the Dean’s Gold Key. After articling at a boutique labour & employment law firm, Cory spent several years providing in-house counsel to one of Canada’s largest academic institutions where he advised senior leaders in a variety of areas including Human Rights Law, Terminations, Collective Bargaining, Privacy, Governance, Internal Policy, Workplace Investigations, External Relations, Arbitrations and much more.
-    </p>
-    <p>
-      Cory’s style focuses on providing proactive, timely advice that instructs clients on best practices and avoids costly litigation before it starts. When litigation is necessary, Cory is an expert negotiator and litigator who is capable of reaching settlements and obtaining awards with minimal hassle and excellent results for his clients.
-    </p>
-    <p>
-      Cory was called to the Ontario Bar in 2019.
-    </p>
+    <div class="about-section">
+      <div class="about-image-container">
+        <img src="placeholder.jpg" alt="Cory Strul" class="about-image">
+        <p class="about-name">Cory Strul</p>
+      </div>
+      <div>
+        <p>
+          Cory Strul is a Labour and Employment Lawyer, Public Law Lawyer and Governance Expert who obtained his Juris Doctor from Osgoode Hall Law School in the Province of Ontario where he was the recipient of many awards including the Dean’s Gold Key. After articling at a boutique labour & employment law firm, Cory spent several years providing in-house counsel to one of Canada’s largest academic institutions where he advised senior leaders in a variety of areas including Human Rights Law, Terminations, Collective Bargaining, Privacy, Governance, Internal Policy, Workplace Investigations, External Relations, Arbitrations and much more.
+        </p>
+        <p>
+          Cory’s style focuses on providing proactive, timely advice that instructs clients on best practices and avoids costly litigation before it starts. When litigation is necessary, Cory is an expert negotiator and litigator who is capable of reaching settlements and obtaining awards with minimal hassle and excellent results for his clients.
+        </p>
+        <p>
+          Cory was called to the Ontario Bar in 2019.
+        </p>
+      </div>
+    </div>
   </main>
 
   <!-- Footer -->
