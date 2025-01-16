@@ -13,3 +13,14 @@
     }
   }
   
+
+  .navbar-toggler {
+    border: 2px solid #ffffff !important; /* Adjust color and thickness */
+  }
+  .navbar-toggler:hover {
+    border-color: #cccccc; /* Adjust hover outline color */
+  }
+  .navbar-toggler {
+    border-radius: 8px; /* Make the outline corners rounded */
+  }
+  
