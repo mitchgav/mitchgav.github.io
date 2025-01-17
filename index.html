@@ -15,10 +15,6 @@
     .navbar, .footer {
       background-color: var(--aquamarine) !important;
     }
-    .header {
-      background-color: var(--aquamarine);
-      color: #fff;
-    }
     .btn-primary {
       background-color: var(--aquamarine);
       border-color: var(--aquamarine);
@@ -27,21 +23,32 @@
       background-color: #0b849d;
       border-color: #0b849d;
     }
+    /* Carousel customization */
+    #imageSlider .carousel-inner {
+      height: 300px; /* Adjust height here for desktop */
+    }
+    .carousel-inner img {
+      object-fit: cover;
+      height: 100%; /* Ensures images fit the defined height */
+    }
+    @media (max-width: 768px) {
+      #imageSlider .carousel-inner {
+        height: 200px; /* Smaller height for mobile screens */
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Strul Law</a>
+      <a class="navbar-brand" href="#">STRUL LAW</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html">Home</a>
-          </li>
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
             <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
@@ -51,29 +58,43 @@
               <li><a class="dropdown-item" href="services-general.html">General Contract and Counsel Services</a></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="blog.html">Blog/Insights</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog/Insights</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  
 
-  <!-- Header Section -->
-  <header class="header text-center py-5 position-relative">
-    <div class="container">
-      <h1 class="display-4">Strul Law</h1>
-      <p class="lead">Professional Legal Services by Cory Strul</p>
-      <img src="placeholder.jpg" alt="Cory Strul" class="header-image rounded-circle">
+  <!-- Full-Width Image Slider -->
+  <div id="imageSlider" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <picture>
+          <source srcset="image1-mobile.jpg" media="(max-width: 768px)">
+          <img src="image1.jpg" class="d-block w-100" alt="Slide 1">
+        </picture>
+      </div>
+      <div class="carousel-item">
+        <picture>
+          <source srcset="image2-mobile.jpg" media="(max-width: 768px)">
+          <img src="image2.jpg" class="d-block w-100" alt="Slide 2">
+        </picture>
+      </div>
+      <div class="carousel-item">
+        <picture>
+          <source srcset="image3-mobile.jpg" media="(max-width: 768px)">
+          <img src="image3.jpg" class="d-block w-100" alt="Slide 3">
+        </picture>
+      </div>
+      <div class="carousel-item">
+        <picture>
+          <source srcset="image4-mobile.jpg" media="(max-width: 768px)">
+          <img src="image4.jpg" class="d-block w-100" alt="Slide 4">
+        </picture>
+      </div>
     </div>
-  </header>
+  </div>
 
   <!-- Main Content -->
   <main class="container my-5 text-center">
@@ -84,12 +105,10 @@
   <!-- Footer -->
   <footer class="footer text-white py-5">
     <div class="container text-center">
-      <!-- Footer Navigation -->
       <h5>Quick Links</h5>
       <ul class="list-unstyled">
         <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
         <li>
-          <!-- Expandable Services Section -->
           <a class="text-white text-decoration-none" data-bs-toggle="collapse" href="#footerServices" role="button" aria-expanded="false" aria-controls="footerServices">Services</a>
           <ul class="collapse list-unstyled mt-2" id="footerServices">
             <li><a href="services-academic.html" class="text-white text-decoration-none">Academic & Corporate Governance</a></li>
@@ -103,12 +122,9 @@
         <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
       </ul>
       <hr class="border-white">
-      <p class="mb-0">&copy; 2024 Strul Law. All rights reserved.</p>
+      <p class="mb-0">&copy; 2024 STRUL LAW. All rights reserved.</p>
     </div>
   </footer>
-
-
-
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
