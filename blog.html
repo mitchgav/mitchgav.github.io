@@ -26,6 +26,41 @@
       background-color: #0b849d;
       border-color: #0b849d;
     }
+    body {
+      padding-top: 56px; /* Adjusts for the navbar height */
+    }
+    @media (max-width: 768px) {
+      body {
+        padding-top: 56px; /* Adjusts for taller navbar on mobile */
+      }
+    }
+    main h2 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    main p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .header-image {
+      margin-top: 20px;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+    .blog-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .blog-card p {
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .blog-card {
+        margin-bottom: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -64,7 +99,6 @@
     </div>
   </nav>
   
-
   <!-- Header Section -->
   <header class="header text-center py-5 position-relative">
     <div class="container">
@@ -82,14 +116,14 @@
     </p>
 
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 blog-card">
         <h3>Understanding Employment Contracts</h3>
         <p>
           Employment contracts are a critical part of any workplace. Learn about their key components and how they protect both employers and employees.
         </p>
         <a href="#" class="btn btn-primary">Read More</a>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 blog-card">
         <h3>Corporate Compliance Simplified</h3>
         <p>
           Navigating corporate governance can be challenging. Explore practical tips and strategies to ensure your business stays compliant.
