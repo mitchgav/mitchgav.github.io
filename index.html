@@ -7,11 +7,12 @@
   <title>Strul Law - Home</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
   <style>
     :root {
       --aquamarine: #0D98BA;
     }
+
+    /* Navbar and buttons */
     .navbar, .footer {
       background-color: var(--aquamarine) !important;
     }
@@ -23,9 +24,10 @@
       background-color: #0b849d;
       border-color: #0b849d;
     }
+
     /* Carousel customization */
     #imageSlider .carousel-inner {
-      height: 300px; /* Adjust height here for desktop */
+      height: 500px; /* Adjust height for desktop */
     }
     .carousel-inner img {
       object-fit: cover;
@@ -35,6 +37,30 @@
       #imageSlider .carousel-inner {
         height: 200px; /* Smaller height for mobile screens */
       }
+    }
+
+    /* Animation styles */
+    @keyframes flyInFromTop {
+      0% {
+        transform: translate(-50%, -150%); /* Start above center */
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, -50%); /* End perfectly centered */
+        opacity: 1;
+      }
+    }
+    .animated-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: whitesmoke;
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      opacity: 0; /* Hidden by default */
+      animation: none;
     }
   </style>
 </head>
@@ -74,33 +100,24 @@
           <source srcset="image1-mobile.jpg" media="(max-width: 768px)">
           <img src="image1.jpg" class="d-block w-100" alt="Slide 1">
         </picture>
+        <div class="animated-text">Expert Legal Services</div>
       </div>
       <div class="carousel-item">
         <picture>
           <source srcset="image2-mobile.jpg" media="(max-width: 768px)">
           <img src="image2.jpg" class="d-block w-100" alt="Slide 2">
         </picture>
+        <div class="animated-text">Employment & Corporate Law</div>
       </div>
       <div class="carousel-item">
         <picture>
           <source srcset="image3-mobile.jpg" media="(max-width: 768px)">
           <img src="image3.jpg" class="d-block w-100" alt="Slide 3">
         </picture>
-      </div>
-      <div class="carousel-item">
-        <picture>
-          <source srcset="image4-mobile.jpg" media="(max-width: 768px)">
-          <img src="image4.jpg" class="d-block w-100" alt="Slide 4">
-        </picture>
+        <div class="animated-text">Your Trusted Legal Partner</div>
       </div>
     </div>
   </div>
-
-  <!-- Main Content -->
-  <main class="container my-5 text-center">
-    <h2>Welcome to Strul Law</h2>
-    <p>Your trusted legal partner specializing in employment law, contracts, and corporate matters. At Strul Law, we are committed to achieving the best outcomes for our clients with a personal touch.</p>
-  </main>
 
   <!-- Footer -->
   <footer class="footer text-white py-5">
@@ -128,5 +145,41 @@
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const carousel = document.querySelector('#imageSlider');
+
+    // Function to trigger animation
+    function animateText(textElement) {
+      textElement.style.animation = 'none'; // Reset animation
+      textElement.offsetHeight; // Trigger reflow
+      textElement.style.animation = 'flyInFromTop 1s ease-out'; // Reapply animation
+      textElement.style.opacity = 1; // Show element
+    }
+
+    // Animate the first text on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const firstText = document.querySelector('.carousel-item.active .animated-text');
+      if (firstText) {
+        animateText(firstText);
+      }
+    });
+
+    // Animate text on slide change
+    carousel.addEventListener('slide.bs.carousel', function (e) {
+      const allTexts = document.querySelectorAll('.animated-text');
+      allTexts.forEach(text => {
+        text.style.opacity = 0; // Hide all texts
+        text.style.animation = 'none'; // Reset animation
+      });
+
+      const nextSlide = e.relatedTarget; // Get the next slide
+      const nextText = nextSlide.querySelector('.animated-text');
+      if (nextText) {
+        setTimeout(() => {
+          animateText(nextText);
+        }, 200); // Delay to sync with slide transition
+      }
+    });
+  </script>
 </body>
 </html>
