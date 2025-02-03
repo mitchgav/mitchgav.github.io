@@ -26,35 +26,65 @@
       background-color: #0b849d;
       border-color: #0b849d;
     }
+    /* Flexbox Layout for Sticky Footer */
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    /* Main container should fill the page */
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    /* Main content should grow and take available space */
+    .content {
+      flex: 1;
+    }
+
+    /* Ensure the footer stays at the bottom */
+    footer {
+      margin-top: auto;
+    }
+
     body {
       padding-top: 56px; /* Adjusts for the navbar height */
     }
+
     @media (max-width: 768px) {
       body {
-        padding-top: 56px; /* Adjusts for taller navbar on mobile */
+        padding-top: 50px; /* Adjust for mobile */
       }
     }
+
     main h2 {
       font-size: 1.8rem;
       font-weight: bold;
       margin-bottom: 20px;
     }
+
     main p {
       line-height: 1.6;
       margin-bottom: 20px;
     }
+
     .header-image {
       margin-top: 20px;
       width: 150px;
       height: 150px;
       object-fit: cover;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+    <div class="container-fluid">
       <a class="navbar-brand" href="#">STRUL LAW</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -76,9 +106,6 @@
           <li class="nav-item">
             <a class="nav-link" href="about.html">About Us</a>
           </li>
-          <!-- <li class="nav-item"> -->
-          <!--<a class="nav-link" href="blog.html">Blog/Insights</a>-->
-          <!-- </li> -->
           <li class="nav-item">
             <a class="nav-link active" href="contact.html">Contact</a>
           </li>
@@ -92,12 +119,12 @@
     <div class="container">
       <h1 class="display-4">Thank You!</h1>
       <p class="lead">Your message has been sent successfully.</p>
-      <img src="placeholder.jpg" alt="Cory Strul" class="header-image rounded-circle">
+      <img src="envelope.png" alt="Cory Strul" class="header-image rounded-circle">
     </div>
   </header>
 
   <!-- Success Message -->
-  <main class="container my-5 text-center">
+  <main class="container my-5 content text-center">
     <h2>We’ve Received Your Message</h2>
     <p>Thank you for reaching out to Strul Law. We’ll review your inquiry and get back to you as soon as possible. If your matter is urgent, please call us directly using the contact details on our homepage.</p>
     <a href="index.html" class="btn btn-primary btn-lg mt-3">Return to Home</a>
@@ -111,7 +138,6 @@
       <ul class="list-unstyled">
         <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
         <li>
-          <!-- Expandable Services Section -->
           <a class="text-white text-decoration-none" data-bs-toggle="collapse" href="#footerServices" role="button" aria-expanded="false" aria-controls="footerServices">Services</a>
           <ul class="collapse list-unstyled mt-2" id="footerServices">
             <li><a href="services-academic.html" class="text-white text-decoration-none">Academic & Corporate Governance</a></li>
@@ -121,7 +147,6 @@
           </ul>
         </li>
         <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
-        <!-- <li><a href="blog.html" class="text-white text-decoration-none">Blog/Insights</a></li> -->
         <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
       </ul>
       <hr class="border-white">

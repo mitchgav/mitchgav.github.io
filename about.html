@@ -41,7 +41,53 @@
     body {
       padding-top: 56px; /* Adjusts for the navbar height */
     }
+
+    /* Flexbox Layout for Sticky Footer */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Main container should fill the page */
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    /* Main content should grow and take available space */
+    .content {
+      flex: 1;
+    }
+
+    /* Ensure the footer stays at the bottom */
+    footer {
+      margin-top: auto;
+    }
+
+    /* Custom Navbar class */
+    .custom-navbar {
+      display: flex;
+      justify-content: space-between; /* Ensures logo and navbar items are spaced out */
+      align-items: center; /* Vertically centers the items */
+      width: 100%; /* Make navbar take full width */
+      padding: 0.5rem 1rem;
+    }
+
+    /* Customize navbar links */
+    .navbar-nav {
+      margin-left: auto; /* Push nav items to the right */
+    }
+
+    .navbar-brand {
+      margin-right: auto; /* Keep logo on the left */
+    }
+
     @media (max-width: 768px) {
+      body {
+        padding-top: 50px; /* Adjusts for taller navbar on mobile */
+      }
       .about-section {
         flex-direction: column;
         text-align: center;
@@ -49,16 +95,13 @@
       .about-image-container {
         margin-bottom: 20px;
       }
-      body {
-        padding-top: 56px; /* Adjusts for taller navbar on mobile */
-      }
     }
   </style>
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+    <div class="container-fluid">
       <a class="navbar-brand" href="#">STRUL LAW</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -80,9 +123,6 @@
           <li class="nav-item">
             <a class="nav-link active" href="about.html">About Us</a>
           </li>
-          <!-- <li class="nav-item"> -->
-            <!--<a class="nav-link" href="blog.html">Blog/Insights</a>-->
-          <!-- </li> -->
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
@@ -100,7 +140,7 @@
   </header>
 
   <!-- About Content -->
-  <main class="container my-5">
+  <main class="container my-5 content">
     <div class="about-section">
       <div class="about-image-container">
         <img src="placeholder.jpg" alt="Cory Strul" class="about-image">
@@ -137,7 +177,6 @@
           </ul>
         </li>
         <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
-        <!--<li><a href="blog.html" class="text-white text-decoration-none">Blog/Insights</a></li>-->
         <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
       </ul>
       <hr class="border-white">

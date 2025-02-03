@@ -25,17 +25,75 @@
       border-color: #0b849d;
     }
 
+    /* Flexbox Layout for Sticky Footer */
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    /* Main container should fill the page */
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    /* Main content should grow and take available space */
+    .content {
+      flex: 1;
+    }
+
+    /* Ensure the footer stays at the bottom */
+    footer {
+      margin-top: auto;
+    }
+
+    /* Custom Navbar class */
+    .custom-navbar {
+      display: flex;
+      justify-content: space-between; /* Ensures logo and navbar items are spaced out */
+      align-items: center; /* Vertically centers the items */
+      width: 100%; /* Make navbar take full width */
+      padding: 0.5rem 1rem;
+    }
+
+    /* Customize navbar links */
+    .navbar-nav {
+      margin-left: auto; /* Push nav items to the right */
+    }
+
+    .navbar-brand {
+      margin-right: auto; /* Keep logo on the left */
+    }
+
     /* Carousel customization */
     #imageSlider .carousel-inner {
       height: 500px; /* Adjust height for desktop */
     }
+
     .carousel-inner img {
       object-fit: cover;
       height: 100%; /* Ensures images fit the defined height */
     }
-    @media (max-width: 768px) {
-      #imageSlider .carousel-inner {
-        height: 200px; /* Smaller height for mobile screens */
+
+    /* Default text positioning */
+    .animated-text {
+      position: absolute;
+      top: 50%; /* Default top for smaller screens */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: whitesmoke;
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      opacity: 0; /* Hidden by default */
+      animation: none;
+    }
+
+    /* Media query for larger screens (min-width: 769px) */
+    @media (min-width: 769px) {
+      .animated-text {
+        top: 20%; /* Adjusted for larger screens */
       }
     }
 
@@ -50,24 +108,18 @@
         opacity: 1;
       }
     }
-    .animated-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: whitesmoke;
-      font-size: 2rem;
-      font-weight: bold;
-      text-align: center;
-      opacity: 0; /* Hidden by default */
-      animation: none;
+
+    @media (max-width: 768px) {
+      #imageSlider .carousel-inner {
+        height: 200px; /* Smaller height for mobile screens */
+      }
     }
   </style>
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+    <div class="container-fluid">
       <a class="navbar-brand" href="#">STRUL LAW</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -85,7 +137,6 @@
             </ul>
           </li>
           <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <!--<li class="nav-item"><a class="nav-link" href="blog.html">Blog/Insights</a></li>-->
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -107,7 +158,7 @@
           <source srcset="image2-mobile.jpg" media="(max-width: 768px)">
           <img src="image2.jpg" class="d-block w-100" alt="Slide 2">
         </picture>
-        <div class="animated-text">Exper Legal Advice</div>
+        <div class="animated-text">Expert Legal Advice</div>
       </div>
       <div class="carousel-item">
         <picture>
@@ -118,11 +169,13 @@
       </div>
     </div>
   </div>
- <!-- Main Content -->
- <main class="container my-5 text-center">
-  <h2>Welcome to Strul Law</h2>
-  <p>Strul Law - A Toronto Law Firm specializing in proactive legal advice that minimizes costs and avoids litigation, and litigation strategy that achieves timely, effective results. Practicing in the areas of Employment Law, Labour Law, Academic and Corporate Governance, Administrative law, General Counsel and Contract Services. </p>
-</main>
+
+  <!-- Main Content -->
+  <main class="container content my-5 text-center">
+    <h2>Welcome to Strul Law</h2>
+    <p>Strul Law - A Toronto Law Firm specializing in proactive legal advice that minimizes costs and avoids litigation, and litigation strategy that achieves timely, effective results. Practicing in the areas of Employment Law, Labour Law, Academic and Corporate Governance, Administrative law, General Counsel and Contract Services.</p>
+  </main>
+
   <!-- Footer -->
   <footer class="footer text-white py-5">
     <div class="container text-center">
@@ -139,7 +192,6 @@
           </ul>
         </li>
         <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
-        <!--<li><a href="blog.html" class="text-white text-decoration-none">Blog/Insights</a></li>-->
         <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
       </ul>
       <hr class="border-white">
