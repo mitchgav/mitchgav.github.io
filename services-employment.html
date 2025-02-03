@@ -30,13 +30,15 @@
     html, body {
       height: 100%;
       margin: 0;
+      display: flex;
+      flex-direction: column;
     }
 
     /* Main container should fill the page */
     .container {
       display: flex;
       flex-direction: column;
-      min-height: 100%;
+      flex-grow: 1;
     }
 
     /* Main content should grow and take available space */
