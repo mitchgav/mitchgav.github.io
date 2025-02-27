@@ -43,7 +43,7 @@
     /* Main content should grow and take available space */
     .content {
       flex: 1;
-      padding-top: 40px; /* Adds space for the fixed navbar */
+      padding-top: 20px; /* Adds space for the fixed navbar */
     }
 
     /* Ensure the footer stays at the bottom */
@@ -67,6 +67,28 @@
 
     .navbar-brand {
       margin-right: auto; /* Keep logo on the left */
+    }
+
+    /* Custom Dropdown */
+    .dropdown-menu {
+      left: 0;
+      position: absolute;
+      z-index: 1000;
+      width: 100%; /* Let the dropdown menu be as wide as its parent */
+      min-width: 200px; /* Ensures the background is wide enough to cover the text */
+      display: none; /* Hide the dropdown by default */
+      word-wrap: break-word; /* Allow wrapping for long text */
+    }
+
+    /* Show the dropdown on hover */
+    .nav-item:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* Ensure dropdown stretches to fit its content */
+    .dropdown-menu .dropdown-item {
+      display: block;
+      white-space: normal; /* Allow the text to wrap in the dropdown */
     }
 
     /* Carousel customization */
@@ -121,6 +143,11 @@
 
       #imageSlider .carousel-inner {
         height: 200px; /* Smaller height for mobile screens */
+      }
+
+      .dropdown-menu {
+        width: 100%;
+        transform: translateX(0); /* Align dropdown with the parent */
       }
     }
   </style>

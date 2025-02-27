@@ -86,14 +86,92 @@
       margin-right: auto; /* Keep logo on the left */
     }
 
-    @media (max-width: 768px) {
-      body {
-        padding-top: 50px; /* Adjusts for taller navbar on mobile */
+    /* Custom Dropdown */
+    .dropdown-menu {
+      left: 0;
+      position: absolute;
+      z-index: 1000;
+      width: 100%; /* Let the dropdown menu be as wide as its parent */
+      min-width: 200px; /* Ensures the background is wide enough to cover the text */
+      display: none; /* Hide the dropdown by default */
+      word-wrap: break-word; /* Allow wrapping for long text */
+    }
+
+    /* Show the dropdown on hover */
+    .nav-item:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* Ensure dropdown stretches to fit its content */
+    .dropdown-menu .dropdown-item {
+      display: block;
+      white-space: normal; /* Allow the text to wrap in the dropdown */
+    }
+
+    /* Carousel customization */
+    #imageSlider .carousel-inner {
+      height: 500px; /* Adjust height for desktop */
+    }
+
+    .carousel-inner img {
+      object-fit: cover;
+      height: 100%; /* Ensures images fit the defined height */
+    }
+
+    /* Default text positioning */
+    .animated-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      opacity: 1; /* Ensures the text is fully opaque */
+      animation: none;
+      color: white; /* Opaque white text */
+      text-shadow: 2px 2px 0px black; /* Solid black shadow with no blur */
+    }
+
+    /* Media query for larger screens (min-width: 769px) */
+    @media (min-width: 769px) {
+      .animated-text {
+        top: 20%; /* Adjusted for larger screens */
       }
+    }
+
+    /* Animation styles */
+    @keyframes flyInFromTop {
+      0% {
+        transform: translate(-50%, -150%); /* Start above center */
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, -50%); /* End perfectly centered */
+        opacity: 1;
+      }
+    }
+
+    /* Media query for mobile devices */
+    @media (max-width: 768px) {
+      .animated-text {
+        font-size: 1.5rem; /* Adjust the font size for mobile */
+      }
+
+      #imageSlider .carousel-inner {
+        height: 200px; /* Smaller height for mobile screens */
+      }
+
+      .dropdown-menu {
+        width: 100%;
+        transform: translateX(0); /* Align dropdown with the parent */
+      }
+
       .about-section {
         flex-direction: column;
         text-align: center;
       }
+
       .about-image-container {
         margin-bottom: 20px;
       }
@@ -165,7 +243,6 @@
   <!-- Footer -->
   <footer class="footer text-white py-5">
     <div class="container text-center">
-      <!-- Footer Navigation -->
       <h5>Quick Links</h5>
       <ul class="list-unstyled">
         <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>

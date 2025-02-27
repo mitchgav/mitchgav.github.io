@@ -71,6 +71,54 @@
       line-height: 1.6;
       margin-bottom: 20px;
     }
+
+    /* Custom Navbar class */
+    .custom-navbar {
+      display: flex;
+      justify-content: space-between; /* Ensures logo and navbar items are spaced out */
+      align-items: center; /* Vertically centers the items */
+      width: 100%; /* Make navbar take full width */
+      padding: 0.5rem 1rem;
+    }
+
+    /* Customize navbar links */
+    .navbar-nav {
+      margin-left: auto; /* Push nav items to the right */
+    }
+
+    .navbar-brand {
+      margin-right: auto; /* Keep logo on the left */
+    }
+
+    /* Custom Dropdown */
+    .dropdown-menu {
+      left: 0;
+      position: absolute;
+      z-index: 1000;
+      width: 100%; /* Let the dropdown menu be as wide as its parent */
+      min-width: 200px; /* Ensures the background is wide enough to cover the text */
+      display: none; /* Hide the dropdown by default */
+      word-wrap: break-word; /* Allow wrapping for long text */
+    }
+
+    /* Show the dropdown on hover */
+    .nav-item:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* Ensure dropdown stretches to fit its content */
+    .dropdown-menu .dropdown-item {
+      display: block;
+      white-space: normal; /* Allow the text to wrap in the dropdown */
+    }
+
+    /* Media query for mobile devices */
+    @media (max-width: 768px) {
+      .dropdown-menu {
+        width: 100%;
+        transform: translateX(0); /* Align dropdown with the parent */
+      }
+    }
   </style>
 </head>
 <body>
