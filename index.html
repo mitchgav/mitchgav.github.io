@@ -12,20 +12,29 @@
       --aquamarine: #0D98BA;
     }
 
-    /* Navbar and buttons */
+    /* Navbar and footer colors */
     .navbar, .footer {
       background-color: var(--aquamarine) !important;
     }
+
+    /* Navbar brand styling (matches provided image) */
+    .navbar-brand {
+      font-weight: 500; /* not bold */
+      letter-spacing: 0.5px;
+      color: #fff !important;
+      font-size: 1.25rem;
+    }
+
     .btn-primary {
       background-color: var(--aquamarine);
       border-color: var(--aquamarine);
     }
+
     .btn-primary:hover {
       background-color: #0b849d;
       border-color: #0b849d;
     }
 
-    /* Flexbox Layout for Sticky Footer */
     html, body {
       height: 100%;
       margin: 0;
@@ -33,75 +42,33 @@
       flex-direction: column;
     }
 
-    /* Main container should fill the page */
     .container {
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
 
-    /* Main content should grow and take available space */
     .content {
       flex: 1;
-      padding-top: 20px; /* Adds space for the fixed navbar */
+      padding-top: 80px; /* Spacing for fixed navbar */
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 900px;
     }
 
-    /* Ensure the footer stays at the bottom */
     footer {
       margin-top: auto;
     }
 
-    /* Custom Navbar class */
-    .custom-navbar {
-      display: flex;
-      justify-content: space-between; /* Ensures logo and navbar items are spaced out */
-      align-items: center; /* Vertically centers the items */
-      width: 100%; /* Make navbar take full width */
-      padding: 0.5rem 1rem;
-    }
-
-    /* Customize navbar links */
-    .navbar-nav {
-      margin-left: auto; /* Push nav items to the right */
-    }
-
-    .navbar-brand {
-      margin-right: auto; /* Keep logo on the left */
-    }
-
-    /* Custom Dropdown */
-    .dropdown-menu {
-      left: 0;
-      position: absolute;
-      z-index: 1000;
-      width: 100%; /* Let the dropdown menu be as wide as its parent */
-      min-width: 200px; /* Ensures the background is wide enough to cover the text */
-      display: none; /* Hide the dropdown by default */
-      word-wrap: break-word; /* Allow wrapping for long text */
-    }
-
-    /* Show the dropdown on hover */
-    .nav-item:hover .dropdown-menu {
-      display: block;
-    }
-
-    /* Ensure dropdown stretches to fit its content */
-    .dropdown-menu .dropdown-item {
-      display: block;
-      white-space: normal; /* Allow the text to wrap in the dropdown */
-    }
-
-    /* Carousel customization */
     #imageSlider .carousel-inner {
-      height: 500px; /* Adjust height for desktop */
+      height: 500px;
     }
 
     .carousel-inner img {
       object-fit: cover;
-      height: 100%; /* Ensures images fit the defined height */
+      height: 100%;
     }
 
-    /* Default text positioning */
     .animated-text {
       position: absolute;
       top: 50%;
@@ -110,72 +77,68 @@
       font-size: 2rem;
       font-weight: bold;
       text-align: center;
-      opacity: 1; /* Ensures the text is fully opaque */
+      opacity: 1;
       animation: none;
-      color: white; /* Opaque white text */
-      text-shadow: 2px 2px 0px black; /* Solid black shadow with no blur */
+      color: white;
+      text-shadow: 2px 2px 0px black;
     }
 
-    /* Media query for larger screens (min-width: 769px) */
     @media (min-width: 769px) {
       .animated-text {
-        top: 20%; /* Adjusted for larger screens */
+        top: 20%;
       }
     }
 
-    /* Animation styles */
     @keyframes flyInFromTop {
       0% {
-        transform: translate(-50%, -150%); /* Start above center */
+        transform: translate(-50%, -150%);
         opacity: 0;
       }
       100% {
-        transform: translate(-50%, -50%); /* End perfectly centered */
+        transform: translate(-50%, -50%);
         opacity: 1;
       }
     }
 
-    /* Media query for mobile devices */
     @media (max-width: 768px) {
       .animated-text {
-        font-size: 1.5rem; /* Adjust the font size for mobile */
+        font-size: 1.5rem;
       }
 
       #imageSlider .carousel-inner {
-        height: 200px; /* Smaller height for mobile screens */
+        height: 200px;
       }
+    }
 
-      .dropdown-menu {
-        width: 100%;
-        transform: translateX(0); /* Align dropdown with the parent */
-      }
+    /* Lawyer image layout */
+    .lawyer-section {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .lawyer-section img {
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .lawyer-name {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 0.75rem;
     }
   </style>
 </head>
 <body>
+
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">STRUL LAW</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-bs-interval="300">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-              <li><a class="dropdown-item" href="services-academic.html">Academic & Corporate Governance</a></li>
-              <li><a class="dropdown-item" href="services-admin.html">Administrative Law</a></li>
-              <li><a class="dropdown-item" href="services-employment.html">Employment & Labour Law</a></li>
-              <li><a class="dropdown-item" href="services-general.html">General Contract and Counsel Services</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+      <a class="navbar-brand text-white" href="#">STRUL LAW</a>
     </div>
   </nav>
 
@@ -207,30 +170,32 @@
   </div>
 
   <!-- Main Content -->
-  <main class="container content my-5 text-center">
-    <h2>Welcome to Strul Law</h2>
-    <p>Strul Law - A Toronto Law Firm specializing in proactive legal advice that minimizes costs and avoids litigation, and litigation strategy that achieves timely, effective results. Practicing in the areas of Employment Law, Labour Law, Academic and Corporate Governance, Administrative law, General Counsel and Contract Services.</p>
+  <main class="container content my-5">
+    <h2 class="text-center mb-4">Welcome to Strul Law</h2>
+
+    <div class="lawyer-section">
+      <div class="text-center">
+        <img src="placeholder.jpg" alt="Cory Strul">
+        <div class="lawyer-name">Cory Strul</div>
+      </div>
+
+      <div>
+        <p>I am a senior Labour, Employment, and Public Law Lawyer with extensive experience advising employers, public sector bodies, and private organizations on complex workplace, governance, and regulatory matters.</p>
+
+        <p>I specialize in helping organizations navigate employment standards, human rights obligations, collective bargaining, workplace investigations, labour relations strategy, regulatory compliance, and employment litigation, as well as a wide range of administrative and public law issues. My practice spans both private and public sector contexts, combining legal precision with a pragmatic understanding of operational realities and government frameworks.</p>
+
+        <p>I work closely with leadership teams, human resources professionals, boards, and senior executives to proactively manage risk, ensure regulatory compliance, resolve disputes, and foster healthy, legally compliant workplaces and institutions. In an increasingly complex regulatory environment, I empower organizations to stay ahead of challenges while supporting their broader business and governance objectives.</p>
+
+        <p>Beyond my core legal practice, I bring significant governance and leadership expertise, including guiding organizations through structural change, strengthening board effectiveness, and building cultures of accountability, transparency, and integrity.</p>
+
+        <p>I am passionate about advancing workplace and institutional excellence through strategic legal insight, collaborative problem-solving, and a forward-looking approach to compliance, governance, and risk management. I welcome opportunities to connect with others who are committed to building strong, resilient organizations.</p>
+      </div>
+    </div>
   </main>
 
   <!-- Footer -->
   <footer class="footer text-white py-5">
     <div class="container text-center">
-      <h5>Quick Links</h5>
-      <ul class="list-unstyled">
-        <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
-        <li>
-          <a class="text-white text-decoration-none" data-bs-toggle="collapse" href="#footerServices" role="button" aria-expanded="false" aria-controls="footerServices">Services</a>
-          <ul class="collapse list-unstyled mt-2" id="footerServices">
-            <li><a href="services-academic.html" class="text-white text-decoration-none">Academic & Corporate Governance</a></li>
-            <li><a href="services-admin.html" class="text-white text-decoration-none">Administrative Law</a></li>
-            <li><a href="services-employment.html" class="text-white text-decoration-none">Employment & Labour Law</a></li>
-            <li><a href="services-general.html" class="text-white text-decoration-none">General Contract and Counsel Services</a></li>
-          </ul>
-        </li>
-        <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
-        <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
-      </ul>
-      <hr class="border-white">
       <p class="mb-0">&copy; 2024 STRUL LAW. All rights reserved.</p>
     </div>
   </footer>
@@ -240,15 +205,13 @@
   <script>
     const carousel = document.querySelector('#imageSlider');
 
-    // Function to trigger animation
     function animateText(textElement) {
-      textElement.style.animation = 'none'; // Reset animation
-      textElement.offsetHeight; // Trigger reflow
-      textElement.style.animation = 'flyInFromTop 1s ease-out'; // Reapply animation
-      textElement.style.opacity = 1; // Show element
+      textElement.style.animation = 'none';
+      textElement.offsetHeight;
+      textElement.style.animation = 'flyInFromTop 1s ease-out';
+      textElement.style.opacity = 1;
     }
 
-    // Animate the first text on page load
     document.addEventListener('DOMContentLoaded', () => {
       const firstText = document.querySelector('.carousel-item.active .animated-text');
       if (firstText) {
@@ -256,20 +219,19 @@
       }
     });
 
-    // Animate text on slide change
     carousel.addEventListener('slide.bs.carousel', function (e) {
       const allTexts = document.querySelectorAll('.animated-text');
       allTexts.forEach(text => {
-        text.style.opacity = 0; // Hide all texts
-        text.style.animation = 'none'; // Reset animation
+        text.style.opacity = 0;
+        text.style.animation = 'none';
       });
 
-      const nextSlide = e.relatedTarget; // Get the next slide
+      const nextSlide = e.relatedTarget;
       const nextText = nextSlide.querySelector('.animated-text');
       if (nextText) {
         setTimeout(() => {
           animateText(nextText);
-        }, 200); // Delay to sync with slide transition
+        }, 200);
       }
     });
   </script>
